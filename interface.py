@@ -1,6 +1,6 @@
 import argparse
 import arquivos  # Importa o módulo criado com a lógica
-
+#
 def main():
     parser = argparse.ArgumentParser(
         description="📚 Sistema de Gerenciamento de Biblioteca Digital"

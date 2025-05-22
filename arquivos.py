@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 from typing import Dict, List
 
-# Lista documentos por tipo e ano
+##Lista documentos por tipo e ano
 def listar_documentos_por_tipo_e_ano(diretorio: str) -> Dict[str, Dict[str, List[str]]]:
     documentos = {}
     path = Path(diretorio)
