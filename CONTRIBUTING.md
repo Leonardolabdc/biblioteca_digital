@@ -72,21 +72,3 @@ Escreva mensagens de commit claras e no imperativo (ex: adiciona funcionalidade,
 Teste suas alterações antes de enviar.
 
 Descreva bem o que foi feito no Pull Request.
-
-💬 Dúvidas?
-Abra uma Issue no repositório com a sua dúvida, sugestão ou problema encontrado. Estamos aqui para ajudar!
-
-
----
-
-### ✅ Como adicionar isso ao seu projeto
-
-1. **Abra o VS Code**, crie (ou edite) o arquivo `CONTRIBUTING.md` na raiz do projeto.
-2. **Cole o conteúdo acima**.
-3. **Salve o arquivo.**
-4. Faça os comandos:
-
-```bash
-git add CONTRIBUTING.md
-git commit -m "docs: adiciona guia completo de contribuição"
-git push origin main
