@@ -1,45 +1,57 @@
 # 📚 Sistema de Gerenciamento de Biblioteca Digital
 
-Sistema simples de linha de comando (CLI) em Python para bibliotecários organizarem documentos digitais por tipo (extensão) e ano (nome da pasta). Permite listar, adicionar, renomear e remover arquivos de forma prática.
+Sistema de linha de comando (CLI) em Python para bibliotecários organizarem documentos digitais por tipo (extensão) e ano (nome da pasta). Permite listar, buscar, adicionar, renomear, remover e marcar documentos com tags.
 
 ---
 
 ## ✅ Funcionalidades
 
-- 📂 Listar documentos organizados por tipo e ano
-- ➕ Adicionar novos documentos à biblioteca
-- ✏️ Renomear arquivos
-- 🗑️ Remover documentos
+- 📂 **Listar** documentos organizados por tipo e ano (com nome e tamanho)
+- 🔍 **Buscar** documentos por nome
+- 🏷️ **Marcar** documentos com tags
+- ➕ **Adicionar** novos documentos à biblioteca
+- ✏️ **Renomear** arquivos
+- 🗑️ **Remover** documentos
 
 ---
 
 ## 🏗️ Estrutura do Projeto
 
-```bash
-projeto_biblioteca/
-├── arquivos.py      # Funções para manipular os arquivos
-├── interface.py     # Interface de linha de comando (CLI)
-└── README.md        # Este arquivo
 ```
+
+biblioteca\_digital/
+├── biblioteca/
+│   ├── 2023/
+│   ├── 2024/
+│   ├── 2025/
+│   └── 2026/
+│
+├── arquivos.py
+├── interface.py
+├── CONTRIBUTING.md
+├── FEEDBACK.md
+└── README.md
+
+````
 
 ---
 
 ## ⚙️ Requisitos
 
-- Python 3.7 ou superior
+- Python **3.7** ou superior
 
 ---
 
-## 🚀 Como usar
+## 🚀 Como Usar
 
-### 1. Clonar o projeto
+### 1. Clonar o Projeto
 
 ```bash
 git clone https://github.com/seu_usuario/seu_repositorio.git
 cd seu_repositorio
-```
+````
 
-### 2. Executar a interface de linha de comando
+### 2. Executar a Interface de Linha de Comando
 
 ```bash
 python interface.py <comando> [argumentos]
@@ -49,9 +61,26 @@ python interface.py <comando> [argumentos]
 
 ## 📌 Comandos e Exemplos de Uso
 
-### 📂 1. Listar documentos
+### 📁 Verifique se os arquivos estão no lugar certo
 
-Lista os documentos do diretório base, organizados por **tipo** e **ano** (baseado no nome da pasta).
+* Os arquivos `arquivos.py` e `interface.py` devem estar na mesma pasta.
+* Rode os comandos a partir dessa pasta.
+
+### 🧪 Crie pastas e arquivos para testes
+
+```bash
+mkdir -p biblioteca/2027
+mkdir -p biblioteca/2028
+mkdir -p biblioteca/2029
+
+echo "Documento de teste PDF" > biblioteca/2027/exemplo1.pdf
+echo "Documento de teste TXT" > biblioteca/2028/anotacoes.txt
+echo "Outro documento DOC" > biblioteca/2029/relatorio.doc
+```
+
+---
+
+### 📂 1. Listar documentos
 
 ```bash
 python interface.py listar biblioteca/
@@ -62,73 +91,60 @@ python interface.py listar biblioteca/
 ```
 Tipo: pdf
   Ano 2023:
-    - artigo1.pdf
-    - resumo.pdf
+    - artigo1.pdf (12.45 KB)
   Ano 2024:
-    - relatorio-final.pdf
+    - relatorio-final.pdf (78.23 KB)
 
 Tipo: jpg
   Ano 2024:
-    - capa.jpg
+    - capa.jpg (50.12 KB)
 ```
 
 ---
 
-### ➕ 2. Adicionar documento
-
-Adiciona (move) um novo documento para a estrutura da biblioteca.
+### 🔍 2. Buscar documentos
 
 ```bash
-python interface.py adicionar caminho/original.pdf biblioteca/2025/original.pdf
-```
-
-Também pode ser usado com alias `add`:
-
-```bash
-python interface.py add caminho/original.pdf biblioteca/2025/original.pdf
+python interface.py buscar biblioteca exemplo
 ```
 
 ---
 
-### ✏️ 3. Renomear documento
-
-Renomeia um documento dentro do mesmo diretório.
+### 🏷️ 3. Marcar documentos com tags
 
 ```bash
-python interface.py renomear biblioteca/2025/original.pdf novo-nome.pdf
-```
-
-Alias disponível: `ren`
-
-```bash
-python interface.py ren biblioteca/2025/original.pdf novo-nome.pdf
+python interface.py marcar biblioteca/2023/exemplo1.pdf importante
 ```
 
 ---
 
-### 🗑️ 4. Remover documento
-
-Remove um arquivo específico da biblioteca.
+### ➕ 4. Adicionar novos documentos
 
 ```bash
-python interface.py remover biblioteca/2025/novo-nome.pdf
-```
-
-Também pode ser usado com:
-
-- `del`
-- `excluir`
-
-```bash
-python interface.py del biblioteca/2025/novo-nome.pdf
-python interface.py excluir biblioteca/2025/novo-nome.pdf
+echo "Novo documento para adicionar" > novo_arquivo.txt
+python interface.py adicionar novo_arquivo.txt biblioteca/2023/novo_arquivo.txt
+python interface.py listar biblioteca
 ```
 
 ---
 
-## 🧼 Organização dos Arquivos
+### ✏️ 5. Renomear arquivos
 
-Os arquivos devem estar organizados assim:
+```bash
+python interface.py renomear biblioteca/2023/novo_arquivo.txt arquivo_renomeado.txt
+```
+
+---
+
+### 🗑️ 6. Remover documentos
+
+```bash
+python interface.py remover biblioteca/2023/arquivo_renomeado.txt
+```
+
+---
+
+## 🧼 Organização Esperada dos Arquivos
 
 ```
 biblioteca/
@@ -145,10 +161,9 @@ biblioteca/
 
 ## 🧾 Licença
 
-Este projeto é de uso livre para fins educacionais e institucionais.
+Este projeto é de **uso livre** para fins educacionais e institucionais.
 
----
+```
 
-## 🙋 Suporte
-
-Dúvidas ou sugestões? Abra uma [issue](https://github.com/seu_usuario/seu_repositorio/issues) ou envie um pull request!
+Se quiser, posso salvar esse conteúdo direto no arquivo `README.md` ou gerar uma versão com cores (ex: Markdown com HTML estilizado para GitHub Pages). Deseja isso?
+```
