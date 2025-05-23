@@ -19,7 +19,7 @@ Sistema de linha de comando (CLI) em Python para bibliotecários organizarem doc
 
 ```
 
-biblioteca\_digital/
+biblioteca_digital/
 ├── biblioteca/
 │   ├── 2023/
 │   ├── 2024/
@@ -30,7 +30,8 @@ biblioteca\_digital/
 ├── interface.py
 ├── CONTRIBUTING.md
 ├── FEEDBACK.md
-└── README.md
+├── README.md
+└── RELATORIO.md
 
 ````
 
@@ -163,7 +164,4 @@ biblioteca/
 
 Este projeto é de **uso livre** para fins educacionais e institucionais.
 
-```
-
-Se quiser, posso salvar esse conteúdo direto no arquivo `README.md` ou gerar uma versão com cores (ex: Markdown com HTML estilizado para GitHub Pages). Deseja isso?
 ```
