@@ -1,6 +1,6 @@
 import argparse
 import arquivos  # Importa o módulo criado com a lógica
-#
+
 def main():
     parser = argparse.ArgumentParser(
         description="📚 Sistema de Gerenciamento de Biblioteca Digital"
@@ -33,6 +33,21 @@ def main():
     )
     remover.add_argument("caminho", help="Caminho do documento a ser removido")
 
+    # Comando: buscar
+    buscar = subparsers.add_parser(
+        "buscar", help="🔍 Buscar documentos por nome"
+    )
+    buscar.add_argument("diretorio", help="Diretório base")
+    buscar.add_argument("nome", help="Parte do nome do documento a buscar")
+
+    # Comando: marcar
+    marcar = subparsers.add_parser(
+        "marcar", help="🏷️ Marcar documento com uma tag"
+    )
+    marcar.add_argument("caminho", help="Caminho do documento a ser marcado")
+    marcar.add_argument("tag", help="Nome da tag")
+
+    # 🔧 Parse dos argumentos depois de definir todos os comandos
     args = parser.parse_args()
 
     # Execução dos comandos
@@ -54,6 +69,17 @@ def main():
         case "remover" | "del" | "excluir":
             arquivos.remover_documento(args.caminho)
             print("🗑️ Documento removido com sucesso!")
+        case "buscar":
+            resultados = arquivos.buscar_documento_por_nome(args.diretorio, args.nome)
+            if resultados:
+                print("🔎 Documentos encontrados:")
+                for r in resultados:
+                    print(f"  - {r}")
+            else:
+                print("⚠️ Nenhum documento encontrado com esse nome.")
+        case "marcar":
+            arquivos.marcar_documento_com_tag(args.caminho, args.tag)
+            print(f"🏷️ Documento marcado com a tag '{args.tag}' com sucesso.")
 
 if __name__ == "__main__":
     main()

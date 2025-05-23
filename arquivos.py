@@ -34,3 +34,26 @@ def renomear_documento(caminho_atual: str, novo_nome: str):
 # Remove um arquivo
 def remover_documento(caminho: str):
     os.remove(caminho)
+# Busca um arquivo
+def buscar_documento_por_nome(diretorio_base, termo_busca):
+    """
+    Busca recursivamente por arquivos que contenham o termo no nome.
+    Retorna uma lista com os caminhos dos arquivos encontrados.
+    """
+    encontrados = []
+
+    for raiz, _, arquivos in os.walk(diretorio_base):
+        for arquivo in arquivos:
+            if termo_busca.lower() in arquivo.lower():
+                caminho_completo = os.path.join(raiz, arquivo)
+                encontrados.append(caminho_completo)
+
+    return encontrados
+def marcar_documento_com_tag(caminho: str, tag: str):
+    """
+    Cria um arquivo marcador com a extensão da tag, por exemplo:
+    arquivo.pdf → arquivo.importante.tagged
+    """
+    arquivo_original = Path(caminho)
+    tag_path = arquivo_original.with_suffix(f".{tag}.tagged")
+    tag_path.touch()  # Cria o arquivo vazio como marcador
