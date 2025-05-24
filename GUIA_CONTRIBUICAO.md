@@ -41,11 +41,9 @@ cd biblioteca_digital
 git checkout -b minha-nova-branch
 ```
    
----
-
 ### ✅ 4. Faça alterações no código, salve os arquivos.
-      garanta que o arquivo criado está dentro do projeto com um arquivo oculta chamaso".git"
----
+      Verifique se o arquivo criado está dentro do projeto com um arquivo oculto chamado ".git"
+
 
 ### ✅ 5. Adicione e faça commit
       Antes volte para a pasta que contenha o arquivo oculto .git com o comando =
